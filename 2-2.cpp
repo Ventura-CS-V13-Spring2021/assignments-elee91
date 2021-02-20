@@ -1,5 +1,5 @@
 // Assignment 2-2
-// Checking duplicationg between 3 numberbers
+// Checking duplicationg between 3 numbers
 #include <iostream>
 using namespace std;
 
