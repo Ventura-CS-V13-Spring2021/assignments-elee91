@@ -7,7 +7,7 @@ using namespace std;
 
 int main()
 {
-/*
+
 // Problem 1	
 	int randN, max1, max2;
 	int i, j = 0;
@@ -35,7 +35,7 @@ int main()
 	}
 //	cout << "\nIn sequence of the random numbers generated," << endl;
 	cout << max1 << " is greater than the previous number " << max2 << endl;
-*/
+
 
 /*
 // Problem 3
@@ -82,6 +82,7 @@ int main()
     }
 */
 
+/*
 // Problem 7
 	int N, id;
 	string emplName, deptName;
@@ -105,16 +106,23 @@ int main()
     ofs.close();
 */
 
-	// Reading Program
+/*	// Reading Program
+	int sum = 0;
+	double average;
 	ifstream ifs;
     ifs.open("employee.txt");
 
 	ifs >> N;
-	cout << "ID\t\t Name\t\t Department\t Salary" << endl;
-	for ()
+	cout << "ID\t\t  Name\t    Department\tSalary" << endl;
+	for ( int j; j < N; j++ ) {
+		ifs >> id >> emplName >> deptName >> salary;
+		cout << id << "  " << emplName << "\t\t" << deptName << "\t\t" << salary << endl;
+		sum += salary;
+	}
+	average = static_cast<double>(sum) / N;
 
-    }
+	cout << "\t\t\t Total: " << sum << "\tAverage: " << average << endl;
    
     ifs.close();
-
+*/
 }
