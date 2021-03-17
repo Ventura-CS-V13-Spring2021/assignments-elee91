@@ -5,7 +5,7 @@ using namespace std;
 int main()
 {
 	int randN, max1, max2;
-	int i, j;
+	int i, j = 0;
 
 	srand(time(0));
 	for ( i = 0; i < 5; i++ ) {
@@ -17,10 +17,10 @@ int main()
 			if ( max1 < randN ) // assigns new max value if new rand in seq is bigger
 				max1 = randN;
 		}
-		while ( j < i ) { // previous number condition
+		for ( j = 0; j < i; j++ )) { // previous number condition
 			if ( max2 < randN && randN < max1 )
 				max2 = randN;
-			j++;
+				break;
 			cout << "[" << j << "j]";
 		}
 		cout << "[" << i << "i]";
