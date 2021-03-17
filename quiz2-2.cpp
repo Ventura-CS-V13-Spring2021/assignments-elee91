@@ -1,5 +1,8 @@
 #include <iostream>
+#include <fstream>
 #include <cstdlib>
+#include <ctime>
+#include <string>
 using namespace std;
 
 int main()
@@ -61,6 +64,7 @@ int main()
 	return 0;
 */
 
+/*
 // Problem 5 
 	int begin, end;
     int i, j;
@@ -68,13 +72,31 @@ int main()
     do {
         cout << "Enter two integers in accending order : ";
         cin >> begin >> end;
-    } while ( end < begin );
+    } while ( end < begin || begin < 1 || end < 1 );
 
     cout << "The following primes are in range [" << begin << ", " << end << "]: \n";
     for ( i = begin; i <= end; i++ ) {
         for ( j = 2; j < (i/j); j++ ) 
-            if ( (i % j) == 0 ) break;
+            if ( !(i % j) ) break;
         if ( j > (i/j) ) cout << i << " ";
     }
+*/
 
+// Problem 7
+	// The Writing Program
+	int N, id;
+	string emplName, deptName;
+	double salary;
+
+    ofstream ofs;
+
+    ofs.open("employee".txt");
+
+    cout << "Enter the number of employees: ";
+    cin >> N;
+	cout << "Input using spaces: [EmployeeID EmployeeName Department Salary]";
+	for (int i; i < N; i++)
+		ofs << id << emplName << deptName << salary;
+    }
+    ofs.close();
 }
