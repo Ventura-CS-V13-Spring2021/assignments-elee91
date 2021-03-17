@@ -4,6 +4,7 @@ using namespace std;
 
 int main()
 {
+/*
 // Problem 1	
 	int randN, max1, max2;
 	int i, j = 0;
@@ -37,16 +38,18 @@ int main()
 // Problem 3
 	int num1, num2, num3;
 	
-	do {}
+	do {
 		cout << "Input 3 integers between [0-99] : ";
 		cin >> num1 >> num2 >> num3;
-	while ( num1 < 0 || num1 > 99 || num1 < 0 || num1 > 99 || num1 < 0 || num1 > 99);
+	} while ( num1 < 0 || num1 > 99 || num1 < 0 || num1 > 99 || num1 < 0 || num1 > 99);
 
 	if ( num1 == num2 && num1 == num3 )
-		cout << "All numbers are the same." << endl;
+		cout << "All numbers are duplicates:" << endl;
+		cout << num1 << " " << num2 << " " << num3;
 	else if ( num1 == num2 || num1 == num3 || num2 == num3 )
-		cout << "There are two duplicated numbers." << endl;
-	else
+		cout << "There are two duplicated numbers:" << endl;
+		cout << num1 << " " << num2 << " " << num3;
+	else if ( num1 != num2 && num1 != num2 && num2 != num3 )
 		cout << "There is no duplicated number." << endl;
 	return 0;
 
