@@ -16,13 +16,16 @@ int main()
 		else {
 			if ( max1 < randN ) {	// assigns new max value if new rand in seq is bigger
 				max1 = randN;
-				while ( j < i && max2 < max1 ) {
+				while ( j <= i && max2 < max1 ) {
 					max2 = randN;
-					 j++;
+
+					j++;
+					cout << j << "j" << endl;
 				}
+
 			}
 		}
-		cout << i << endl;
+		cout << i << "i";
 		cout << randN << " ";
 	
 	}
