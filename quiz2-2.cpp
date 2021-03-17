@@ -5,6 +5,7 @@ using namespace std;
 int main()
 {
 	int randN, max1, max2;
+	int flag = 0;
 
 	srand(time(0));
 	for ( int i; i < 5; i++ ) {
@@ -14,8 +15,12 @@ int main()
 		else {
 			if ( max1 < randN )
 				max1 = randN;
-		}
-		
+				flag = i;
+			for ( int j; j < flag; j++ ) {
+				if ( max2 < randN )
+					max2 = randN;
+				else break;
+			}
 		}
 		cout << randN << " ";
 	}
