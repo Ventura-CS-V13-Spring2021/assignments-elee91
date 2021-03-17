@@ -5,10 +5,10 @@ using namespace std;
 int main()
 {
 	int randN, max1, max2;
-	int k;
+	int i, j;
 
 	srand(time(0));
-	for ( int i; i < 5; i++ ) {
+	for ( i = 0; i < 5; i++ ) {
 		randN = rand() % 100;
 		
 		if ( i == 0 )
@@ -16,10 +16,9 @@ int main()
 		else {
 			if ( max1 < randN ) {	// assigns new max value if new rand in seq is bigger
 				max1 = randN;
-				k = i;
-				for ( int j; j < 4; j++ ) {
-					if ( max2 < randN )
-						max2 = randN;
+				while ( j < i && max2 < max1 ) {
+					max2 = randN;
+					 j++;
 				}
 			}
 		}
