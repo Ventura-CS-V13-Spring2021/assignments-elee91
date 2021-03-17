@@ -6,16 +6,15 @@ int main()
 {
 	int randN, max1, max2;
 	srand(time(0));
-	for ( int i = 0; i < 5; i++ ) {
+	for ( int i; i < 5; i++ ) {
 		randN = rand() % 100;
 		if ( i == 0 )
 			max1 = max2 = randN;
 		else {
-			if ( max1 < randN )
+			if ( randN > max1 )
 				max1 = randN;
-			do {
+			if ( randN > max2 && randN < max1 )
 				max2 = randN;
-			} while ( max2 < max1 && max2 < randN );
 		}
 		cout << randN << " ";
 	}
