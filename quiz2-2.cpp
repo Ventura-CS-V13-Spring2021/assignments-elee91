@@ -10,7 +10,7 @@ int main()
 
 // Problem 1	
 	int randN, max1, max2;
-	int i, j = 0;
+	int i, j;
 
 	srand(time(0));
 	for ( i = 0; i < 5; i++ ) {
@@ -22,18 +22,18 @@ int main()
 			if ( max1 < randN ) // assigns new max value if new rand in seq is bigger
 				max1 = randN;
 		}
-		do {
+		while ( j < i ) {
 			if ( randN >= max1 || j >= i )
 				break;
 			else {
 				max2 = randN;
 				j++;
 			}
-		} while ( max2 < randN );
-
-		cout << randN << " ";
+		}
+	cout << randN << " ";
 	}
 //	cout << "\nIn sequence of the random numbers generated," << endl;
+	cout << endl;
 	cout << max1 << " is greater than the previous number " << max2 << endl;
 
 
