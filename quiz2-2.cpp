@@ -13,19 +13,17 @@ int main()
 		
 		if ( i == 0 )
 			max1 = max2 = randN;	// initializes values for our 'max'
-		else {
-			if ( max1 < randN ) {	// assigns new max value if new rand in seq is bigger
+		else { // i > 0
+			if ( max1 < randN ) // assigns new max value if new rand in seq is bigger
 				max1 = randN;
-				while ( j <= i && max2 < max1 ) {
-					max2 = randN;
-
-					j++;
-					cout << j << "j" << endl;
-				}
-
-			}
 		}
-		cout << i << "i";
+		while ( j < i ) { // previous number condition
+			if ( max2 < randN && randN < max1 )
+				max2 = randN;
+			j++;
+			cout << "[" << j << "j]";
+		}
+		cout << "[" << i << "i]";
 		cout << randN << " ";
 	
 	}
