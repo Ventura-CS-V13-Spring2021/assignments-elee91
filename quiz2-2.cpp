@@ -17,16 +17,15 @@ int main()
 			if ( max1 < randN ) // assigns new max value if new rand in seq is bigger
 				max1 = randN;
 		}
-		for ( j = 0; j < i; j++ )) { // previous number condition
+		do {
 			if ( max2 < randN && randN < max1 )
 				max2 = randN;
 				break;
-			cout << "[" << j << "j]";
-		}
-		cout << "[" << i << "i]";
+		} while ( j < i );
+
 		cout << randN << " ";
-	
 	}
+	
 	cout << "\nIn sequence of the random numbers generated," << endl;
 	cout << max1 << " is greater than the previous number " << max2 << endl;
 }
