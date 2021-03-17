@@ -34,7 +34,7 @@ int main()
 	cout << max1 << " is greater than the previous number " << max2 << endl;
 */
 
-
+/*
 // Problem 3
 	int num1, num2, num3;
 	
@@ -59,5 +59,22 @@ int main()
 	else
 		cout << "There is no duplicated number." << endl;
 	return 0;
-}
+*/
 
+// Problem 5 
+	int begin, end;
+    int i, j;
+
+    do {
+        cout << "Enter two integers in accending order : ";
+        cin >> begin >> end;
+    } while ( end < begin );
+
+    cout << "The following primes are in range [" << begin << ", " << end << "]: \n";
+    for ( i = begin; i <= end; i++ ) {
+        for ( j = 2; j < (i/j); j++ ) 
+            if ( (i % j) == 0 ) break;
+        if ( j > (i/j) ) cout << i << " ";
+    }
+
+}
