@@ -10,12 +10,13 @@ int main()
 		randN = rand() % 100;
 		if ( i == 0 )
 			max1 = max2 = randN;
-		do {
-			max1 = randN;
-		} while ( max1 < randN );
-		do {
-			max2 = randN;
-		} while ( max2 < max1 );
+		else {
+			if ( max1 < randN )
+				max1 = randN;
+			do {
+				max2 = randN;
+			} while ( max2 < max1 && max2 < randN );
+		}
 		cout << randN << " ";
 	}
 	cout << "\nIn sequence of the random numbers generated," << endl;
