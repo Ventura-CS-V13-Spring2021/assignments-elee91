@@ -87,7 +87,7 @@ int main()
 	string emplName, deptName;
 	double salary;
 
-	// Writing Program
+/*	// Writing Program
     ofstream ofs;
     ofs.open("employee.txt");
 
@@ -103,33 +103,18 @@ int main()
 		ofs << salary << endl;
     }
     ofs.close();
+*/
 
-/*
 	// Reading Program
 	ifstream ifs;
     ifs.open("employee.txt");
 
+	ifs >> N;
 	cout << "ID\t\t Name\t\t Department\t Salary" << endl;
-	while ( ifs >> randNum ) {
-        if ( N == 0 )
-            min = max = randNum;
-        else {
-            if ( randNum < min )
-                min = randNum;
-            if ( max < randNum )
-                max = randNum;
-            }
-        sum += randNum;
-        N++;
+	for ()
+
     }
-    average = static_cast<double>(sum) / N;
+   
+    ifs.close();
 
-    cout << "Total number of integers : " << N << endl;
-    cout << "Sum : " << sum << endl;
-    cout << "Min : " << min << endl;
-    cout << "Max : " << max << endl;
-    cout << "Average : " << average << endl;
-    ifs.close();\
-
-*/
 }
