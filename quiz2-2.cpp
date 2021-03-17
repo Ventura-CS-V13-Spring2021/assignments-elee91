@@ -83,20 +83,53 @@ int main()
 */
 
 // Problem 7
-	// The Writing Program
 	int N, id;
 	string emplName, deptName;
 	double salary;
 
+	// Writing Program
     ofstream ofs;
-
-    ofs.open("employee".txt");
+    ofs.open("employee.txt");
 
     cout << "Enter the number of employees: ";
     cin >> N;
-	cout << "Input using spaces: [EmployeeID EmployeeName Department Salary]";
-	for (int i; i < N; i++)
-		ofs << id << emplName << deptName << salary;
+	ofs << N << endl;
+	cout << "Input using spaces: \nEmployeeID EmployeeName Department Salary" << endl;
+	for (int i; i < N; i++) {
+		cin >> id >> emplName >> deptName >> salary;
+		ofs << id << " ";
+		ofs << emplName << " ";
+		ofs << deptName << " ";
+		ofs << salary << endl;
     }
     ofs.close();
+
+/*
+	// Reading Program
+	ifstream ifs;
+    ifs.open("employee.txt");
+
+	cout << "ID\t\t Name\t\t Department\t Salary" << endl;
+	while ( ifs >> randNum ) {
+        if ( N == 0 )
+            min = max = randNum;
+        else {
+            if ( randNum < min )
+                min = randNum;
+            if ( max < randNum )
+                max = randNum;
+            }
+        sum += randNum;
+        N++;
+    }
+    average = static_cast<double>(sum) / N;
+
+    cout << "Total number of integers : " << N << endl;
+    cout << "Sum : " << sum << endl;
+    cout << "Min : " << min << endl;
+    cout << "Max : " << max << endl;
+    cout << "Average : " << average << endl;
+    ifs.close();\
+
+*/
 }
