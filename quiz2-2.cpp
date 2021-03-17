@@ -10,20 +10,26 @@ int main()
 	srand(time(0));
 	for ( int i; i < 5; i++ ) {
 		randN = rand() % 100;
+		cout << randN << " ";
 		if ( i == 0 )
-			max1 = max2 = randN;
+			max1 = max2 = randN;	// initializes values for our 'max'
 		else {
-			if ( max1 < randN )
+			if ( max1 < randN ) {	// assigns new max value if new rand in seq is bigger
 				max1 = randN;
-				flag = i;
-			for ( int j; j < flag; j++ ) {
-				if ( max2 < randN )
-					max2 = randN;
-				else break;
+				flag = i;	// flag which iteration the max value is at
+				cout << flag << endl;
+			}
+				cout << i << endl;
+				
+		
+			// for ( int j; j < flag; j++ ) {
+			// 	if ( max2 < randN )
+			// 		max2 = randN;
+			// 	else break;
+
 			}
 		}
-		cout << randN << " ";
-	}
+	
 
 	cout << "\nIn sequence of the random numbers generated," << endl;
 	cout << max1 << " is greater than the previous number " << max2 << endl;
