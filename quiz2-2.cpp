@@ -39,20 +39,25 @@ int main()
 	int num1, num2, num3;
 	
 	do {
-		cout << "Input 3 integers between [0-99] : ";
+		cout << "Input 3 integers between [0-99]: ";
 		cin >> num1 >> num2 >> num3;
 	} while ( num1 < 0 || num1 > 99 || num1 < 0 || num1 > 99 || num1 < 0 || num1 > 99);
 
-	if ( num1 == num2 && num1 == num3 )
-		cout << "All numbers are duplicates:" << endl;
-		cout << num1 << " " << num2 << " " << num3;
-	else if ( num1 == num2 || num1 == num3 || num2 == num3 )
-		cout << "There are two duplicated numbers:" << endl;
-		cout << num1 << " " << num2 << " " << num3;
-	else if ( num1 != num2 && num1 != num2 && num2 != num3 )
+	if ( num1 == num2 && num1 == num3 ) {
+		cout << "All numbers are duplicates: " << endl;
+		cout << num1 << " " << num2 << " " << num3  << endl;
+	}
+	else if ( num1 == num2 || num1 == num3 || num2 == num3 ) {
+		cout << "There are two duplicated numbers: " << endl;
+		if ( num1 == num2 )
+			cout << num1 << " " << num2 << endl;
+		if ( num1 == num3 )
+			cout << num1 << " " << num3 << endl;
+		if ( num2 == num3 )
+			cout << num2 << " " << num3 << endl;
+	}
+	else
 		cout << "There is no duplicated number." << endl;
 	return 0;
-
-
 }
 
