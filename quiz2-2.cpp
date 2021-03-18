@@ -10,11 +10,12 @@ int main()
 
 // Problem 1	
 	int randN, max1, max2;
-	int i, j = 0, p;
+	int p;
+	int i, j;
 
-	cout << "In sequence of the random numbers generated," << endl;
+	cout << "Random numbers generated:" << endl;
 	srand(time(0));
-	for ( i = 0; i < 10; i++ ) {
+	for ( i = 0; i < 5; i++ ) {
 		randN = rand() % 100;
 		
 		if ( i == 0 )
@@ -22,17 +23,18 @@ int main()
 		else {
 			if ( max1 < randN ) {
 				max1 = randN;
-				p = i;
+				p = i; // placeholder for position of max value
 			}
 		}
- 		while ( max2 < randN && j++ < p ) {
-			max2 = randN;
-			if ( j == p ) break;
-		}
 		cout << randN << " ";
+		for ( j = 0; j < p; j++ ) {
+			if ( max2 < randN && randN < max1 )
+				max2 = randN;
+				break;
+		}
 	}
 	cout << endl;
-	cout << max1 << " is greater than " << max2 << endl;
+	cout << max1 << " is greater than the previous number " << max2 << endl;
 
 
 /*
