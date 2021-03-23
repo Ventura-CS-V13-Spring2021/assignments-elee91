@@ -11,7 +11,6 @@ int main()
     double average;
 
     ifstream ifs;
-
     ifs.open("data.txt");
     
     while ( ifs >> randNum ) {
@@ -26,6 +25,7 @@ int main()
         sum += randNum;
         N++;
     }
+	
     average = static_cast<double>(sum) / N;
 
     cout << "Total number of integers : " << N << endl;

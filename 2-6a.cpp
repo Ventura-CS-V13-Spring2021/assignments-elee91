@@ -12,9 +12,11 @@ int main()
    
     ofstream ofs;
     ofs.open("data.txt");
+
     cout << "Enter the amount of random integers to generate : ";
     cin >> N;
     srand(time(0));
+	
     for ( int i; i < N; i++ ) {
         randNum = rand() % 100;
         ofs << randNum << endl;
