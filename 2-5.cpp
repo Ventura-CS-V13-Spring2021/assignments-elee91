@@ -15,9 +15,10 @@ int main()
 
     cout << "The following primes are in range [" << begin << ", " << end << "]: \n";
     for ( i = begin; i <= end; i++ ) {
-        for ( j = 2; j < (i/j); j++ ) 
+        for ( j = 2; j <= (i/j); j++ ) 
             if ( !(i % j) ) break;
         if ( j > (i/j) ) cout << i << " ";
     }
+	cout << endl;
     return 0;
 } 
