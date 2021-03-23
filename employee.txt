@@ -1,4 +1,0 @@
-3
-10981011 John Computer 10000
-10981012 Johny Network 11000
-10981013 Johnn HR 9000
