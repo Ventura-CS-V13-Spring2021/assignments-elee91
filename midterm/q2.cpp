@@ -18,16 +18,12 @@ int main() {
 		exit(0);
 	}
 	srand(time(0));
-
+	cout << "The 10 numbers generated are: " << endl;
 	for (int i = 0; i < 10; i++) {
 		num = getRdnum();
 		cout << num << " ";
-		if (i == 0) 
-			continue;
-		else if (isGreater(num)) {
-			// cout << num << " ";
+		if (i > 0 && isGreater(num)) 
 			ofs << num << " ";
-		}
 	}
 	cout << endl;
     ofs.close();
@@ -40,10 +36,13 @@ int getRdnum(void) {
 }
 
 int isGreater(int n) {
-	int static previous = 0;
-	if (n > previous)
+	static int previous = n;
+	if (n > previous) {
 		previous = n;
 		return 1;
-	if (n < previous)
+	}
+	if (n < previous) {
+		previous = n;
 		return 0;
+	}
 }
