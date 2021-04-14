@@ -31,8 +31,7 @@ int main() {
 	fileWrite(ofs, difference);
 	ofs.close();
 
-	cout << "min: " << min << endl;
-	cout << "max: " << max << endl;
+	return 0;
 }
 
 int getRdnum(void) {
@@ -42,15 +41,20 @@ int getRdnum(void) {
 }
 
 int findMin (int n1, int n2, int n3) {
-
+	if ( n1 <= n2 && n1 <= n3)
+		return n1;
+	if ( n2 <= n1 && n2 <= n3)
+		return n2;
+	if ( n3 <= n1 && n3 <= n2)
+		return n3;
 }
 
 int findMax (int n1, int n2, int n3) {
-	if ( n1 > n2 && n1 > n3)
+	if ( n1 >= n2 && n1 >= n3)
 		return n1;
-	if ( n2 > n1 && n2 > n3)
+	if ( n2 >= n1 && n2 >= n3)
 		return n2;
-	if ( n3 > n1 && n3 > n2)
+	if ( n3 >= n1 && n3 >= n2)
 		return n3;
 }
 int getDifference(int min, int max) {
