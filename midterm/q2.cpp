@@ -22,8 +22,9 @@ int main() {
 	for (int i = 0; i < 10; i++) {
 		num = getRdnum();
 		cout << num << " ";
-		if (i > 0 && isGreater(num)) 
-			ofs << num << " ";
+		if (isGreater(num))
+			if (i > 0)
+				ofs << num << " ";
 	}
 	cout << endl;
     ofs.close();
