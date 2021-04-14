@@ -9,6 +9,8 @@ int getRdnum(void);
 int isGreater(int);
 
 int main() {
+	int num;
+	
     ofstream ofs;
     ofs.open("numbers.txt");
 	if (ofs.fail()) {
@@ -16,7 +18,14 @@ int main() {
 		exit(0);
 	}
 	for (int i = 0; i < 10; i++) {
-
+		num = getRdnum();
+		cout << num << " ";
+		if (i == 0) 
+			continue;
+		else {
+			if (isGreater(num))
+				cout << num << " ";
+		}
 	}
 
     ofs.close();
@@ -24,7 +33,7 @@ int main() {
 
 int getRdnum(void) {
 	int N;
-	
+
 	srand(time(0));
 	N = (rand() % 50) + 1;
 	return N;
@@ -33,9 +42,9 @@ int getRdnum(void) {
 int isGreater(int n) {
 	int static previous = 0;
 	
-	if(n > previous)
+	if (n > previous)
 		previous = n;
 		return 1;
-	if(n < previous)
+	if (n < previous)
 		return 0;
 }
