@@ -29,13 +29,11 @@ int main() {
 	cout << endl;
     ofs.close();
 }
-
 int getRdnum(void) {
 	int N;
 	N = (rand() % 50) + 1;
 	return N;
 }
-
 int isGreater(int n) {
 	static int previous = n;
 	if (n > previous) {
