@@ -17,31 +17,30 @@ int main() {
 		cerr << "File open error\n.";
 		exit(0);
 	}
+	srand(time(0));
+
 	for (int i = 0; i < 10; i++) {
 		num = getRdnum();
 		cout << num << " ";
 		if (i == 0) 
 			continue;
-		else {
-			if (isGreater(num))
-				cout << num << " ";
+		else if (isGreater(num)) {
+			// cout << num << " ";
+			ofs << num << " ";
 		}
 	}
-
+	cout << endl;
     ofs.close();
 }
 
 int getRdnum(void) {
 	int N;
-
-	srand(time(0));
 	N = (rand() % 50) + 1;
 	return N;
 }
 
 int isGreater(int n) {
 	int static previous = 0;
-	
 	if (n > previous)
 		previous = n;
 		return 1;
