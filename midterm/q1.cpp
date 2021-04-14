@@ -30,3 +30,5 @@ int main() {
 
 	return 0;
 }
+
+// First I wanted to create a loop according to the number of students (N=10) which read each students' name and two score. After recording the two scores in separate variables, I then calculated the sum, and average (the sum had to be static_casted to double for decimals) and then rewrite them simultaneously inside the loop function. Using a conditional if statement, for each sum that was > 80, I used another variable j, to increment itself when condition was true. In this example, all students had average scores above 80.
