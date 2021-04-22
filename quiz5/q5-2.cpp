@@ -35,10 +35,12 @@ void findmatchnum(int num1[], int size1, int num2[], int size2) {
 
 	for (int i = 0; i < size1; i++) {
 		for (int j = 0; j < size2; j++) {
-			if (num2[j] == num1[i]) { // if 2nd array elements matches 1st
-				dup[j] = num1[i]; // store duplicated element in matched array
-				match++;
-			}
+			if (num1[i] != dup[j])
+				if (num2[j] == num1[i]) { // if 2nd array elements matches 1st
+					dup[j] = num1[i]; // store duplicated element in matched array
+					match++;
+					break;
+				}
 		}
 	}
 
