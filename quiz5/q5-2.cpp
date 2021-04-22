@@ -18,7 +18,7 @@ int main()
     printarray(num1, SIZE1);
     makearray(num2, SIZE2);
     printarray(num2, SIZE2);
-    findmatchnum(num1,SIZE1, num2, SIZE2);
+    findmatchnum(num1, SIZE1, num2, SIZE2);
 }
 void makearray(int num[], int size) {
     for(int i = 0; i < size; i++)
@@ -31,12 +31,18 @@ void printarray(int num[], int size) {
 }
 void findmatchnum(int num1[], int size1, int num2[], int size2) {
 	int match = 0;
-	int dup[size2];
+	int dup[size2] = {-1};
+	printarray(dup, size2);
 	for (int i = 0; i < size1; i++) {
 		for (int j = 0; j < size2; j++) {
 			if (num1[i] == num2[j]) {
-				dup[j] = num1[i];
-				match++;
+				if (dup[j] == num1[i])
+					continue;
+				else
+					dup[j] = num1[i];
+					cout << dup[j] << endl;
+					match++;
+					continue;
 			}
 		}
 	}
