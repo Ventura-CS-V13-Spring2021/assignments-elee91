@@ -5,7 +5,6 @@ using namespace std;
 void makearray(int [], int);
 void printarray(int [], int);
 void findmatchnum(int [], int, int [], int);
-
 int main()
 {
 	const   int SIZE1 = 10;
@@ -20,19 +19,21 @@ int main()
     printarray(num2, SIZE2);
     findmatchnum(num1, SIZE1, num2, SIZE2);
 }
-void makearray(int num[], int size) {
+void makearray(int num[], int size)
+{
     for(int i = 0; i < size; i++)
         num[i] = rand() % 10;
 }
-void printarray(int num[], int size) {
+void printarray(int num[], int size)
+{
     for(int i = 0; i < size; i++)
         cout << num[i] << "\t";
     cout << endl;
 }
-void findmatchnum(int num1[], int size1, int num2[], int size2) {
+void findmatchnum(int num1[], int size1, int num2[], int size2)
+{
 	int match = 0;
 	int dup[match];
-
 	for (int i = 0; i < size1; i++) {
 		for (int j = 0; j < size2; j++) {
 			if (num1[i] == num2[j]) {
@@ -41,7 +42,7 @@ void findmatchnum(int num1[], int size1, int num2[], int size2) {
 			}
 		}
 	}
-	
+
 	printarray(dup, match);
     cout << "The number of matched elements : " << match << endl;
 }
