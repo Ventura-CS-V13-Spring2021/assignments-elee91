@@ -1,3 +1,4 @@
+// Q2 Count duplicated numbers between arrays
 #include    <iostream>
 #include    <cstdlib>
 #include    <ctime>
@@ -42,7 +43,7 @@ void findmatchnum(int num1[], int size1, int num2[], int size2)
 			}
 		}
 	}
-
+	cout << "Duplicated elements : ";
 	printarray(dup, match);
-    cout << "The number of matched elements : " << match << endl;
+    cout << "Number of matched elements : " << match << endl;
 }

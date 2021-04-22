@@ -1,3 +1,4 @@
+// Q3 Binary cluster count of 0's
 #include    <iostream>
 using namespace std;
 void makebinary(int [], int);
@@ -35,3 +36,4 @@ void count0cluster(int bin[], int size)
 		cluster++;
 	cout << "Cluster Count : " << cluster << endl;
 }
+// I felt like this question was fairly easy. Since the binary clusters are separated by 1's, I used a for loop to count how many zero's have a 1 in their following index. 0's followed by another 0 are in the same cluster, hence my algorithm was to check for a 0 1 sequence (line 32). One complication I stumbled upon when I ran my code the first time was that my algorithm did not account for a 0 cluster at the end of the array, hence, I made a separate counter just to check for that and added it to the number of clusters determined from the loop.

@@ -4,7 +4,7 @@
 using namespace std;
 
 void printarray(int [], int);
-int sumarray(int [], int &, int);
+void sumarray(int [], int &, int);
 
 int main() {
 	const int SIZE = 10;
@@ -24,9 +24,9 @@ void printarray(int a[], int SIZE) {
 		cout << setw(5) << a[i];
 	cout << endl;
 }
-int sumarray(int a[], int &sum, int SIZE) {
+void sumarray(int a[], int &sum, int SIZE) {
 	for (int i = 0; i < SIZE; i++)
 		sum += a[i];
 	cout << "Sum of array: " << sum << endl;
-	return sum;
 }
+// This question was fairly easy. I made two prototype functions to print the array (line 22) and to take the sum of the numbers array (line 27). With the sumarry function, I created a for loop to add each index array to each other using the addition operator (line 29). Using a reference variable, I stored this into the variable sum in the main function. After finding the sum, to answer the problem, I used the difference of the sum of the numbers array and each individual index to the new array diff using a for loop to access each indices.
