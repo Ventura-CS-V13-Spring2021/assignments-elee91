@@ -4,7 +4,7 @@
 using namespace std;
 
 void printarray(int [], int);
-int sum(int [], int);
+int sumarray(int [], int &, int);
 
 int main() {
 	const int SIZE = 10;
@@ -12,17 +12,21 @@ int main() {
 	int diff[10];
 	int sum = 0;
 
-	
+	printarray(numbers, SIZE);
+	sumarray(numbers, sum, SIZE);\
+	for (int i = 0; i < SIZE; i++) {
+		diff[i] = sum - numbers[i];
+	}
+	printarray(diff, SIZE);
 }
-void printarray(int n[], int SIZE) {
+void printarray(int a[], int SIZE) {
 	for (int i = 0; i < SIZE; i++)
-		cout << setw(4) << n[i];
+		cout << setw(5) << a[i];
 	cout << endl;
 }
-int sum(int n[], int SIZE) {
-	int sum = 0;
-	for (int i = 0; i < SIZE; i++) {
-		sum += n[i];
-	cout << "Sum of array: " << endl;
+int sumarray(int a[], int &sum, int SIZE) {
+	for (int i = 0; i < SIZE; i++)
+		sum += a[i];
+	cout << "Sum of array: " << sum << endl;
 	return sum;
 }
