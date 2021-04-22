@@ -31,19 +31,17 @@ void printarray(int num[], int size) {
 }
 void findmatchnum(int num1[], int size1, int num2[], int size2) {
 	int match = 0;
-	int dup[size2];
+	int dup[match];
 
 	for (int i = 0; i < size1; i++) {
 		for (int j = 0; j < size2; j++) {
-			if (num1[i] != dup[j])
-				if (num2[j] == num1[i]) { // if 2nd array elements matches 1st
-					dup[j] = num1[i]; // store duplicated element in matched array
-					match++;
-					break;
-				}
+			if (num1[i] == num2[j]) {
+				dup[match++] = num1[i];
+				break;
+			}
 		}
 	}
-
+	
 	printarray(dup, match);
     cout << "The number of matched elements : " << match << endl;
 }
