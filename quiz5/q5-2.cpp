@@ -35,18 +35,13 @@ void findmatchnum(int num1[], int size1, int num2[], int size2) {
 
 	for (int i = 0; i < size1; i++) {
 		for (int j = 0; j < size2; j++) {
-			
-			if (num2[j] == num1[i]) {
-				if (zero[j] == num1[i])
-					continue;
-				else
-					zero[j] = num1[i];
-					cout << zero[j] << endl;
-					match++;
-					continue;
+			if (num2[j] == num1[i]) { // if 2nd array elements matches 1st
+				dup[j] = num1[i]; // store duplicated element in matched array
+				match++;
 			}
 		}
 	}
 
+	printarray(dup, match);
     cout << "The number of matched elements : " << match << endl;
 }
