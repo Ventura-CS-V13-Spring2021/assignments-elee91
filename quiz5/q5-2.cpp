@@ -47,3 +47,4 @@ void findmatchnum(int num1[], int size1, int num2[], int size2)
 	printarray(dup, match);
     cout << "Number of matched elements : " << match << endl;
 }
+// I created a nested for loop to match the numbers between 1st and 2nd array. By creating a variable match, I am able to count how many duplicates there were. I also created an array to help store duplicated variables from the match. The biggest obstacle I had from doing this problem was creating an algorithm to check the new array of duplicates so that I would only be matched once.
