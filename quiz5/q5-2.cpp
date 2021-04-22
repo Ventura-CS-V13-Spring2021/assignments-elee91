@@ -29,8 +29,13 @@ void printarray(int num[], int size) {
         cout << num[i] << "\t";
     cout << endl;
 }
-void findmatchnum(int num1[], int size1, int num2[], int size2)
-{
-   
+void findmatchnum(int num1[], int size1, int num2[], int size2) {
+	int match = 0;
+	for (int i = 0; i < size1; i++) {
+		for (int j = 0; j < size2; j++) {
+			if (num1[i] == num2[j])
+				match++;
+		}
+	}
     cout << "The number of matched elements "  << match << endl;
 }
