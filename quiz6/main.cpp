@@ -5,6 +5,7 @@ using namespace std;
 int main()
 {
     IntegerArray N;
+	
     N.fillUp();
     N.printAll();
     cout << "Current length is " << N.getLength() << endl;
