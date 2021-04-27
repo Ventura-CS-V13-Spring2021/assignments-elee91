@@ -47,22 +47,23 @@ void IntegerArray::sortArray(int flag) {
 	}
 }
 int IntegerArray::getPrimenumbers(void) const {
-	int n = 0;
+	int count = 0;
 	bool isPrime = true;
 	for (int i = 0; i < length; i++) {
 		if (numbers[i] == 0 || numbers[i] == 1) {
 			isPrime = false;
-		}
-		else {
-			for (int j = 2; j < (numbers[i]/j); j++) {
+		} else if (numbers[i] == 2) {
+			count++;
+		} else {
+			for (int j = 2; j < (numbers[i]/2); j++) {
 				if ( numbers[i] % j == 0 ) {
 					isPrime = false;
 					break;
 				}
+				else
+					count++;
 			}
-			if (isPrime)
-				n++;
 		}
 	}
-	return n;
+	return count;
 }
