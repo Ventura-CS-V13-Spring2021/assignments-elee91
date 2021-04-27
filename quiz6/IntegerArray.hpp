@@ -9,9 +9,9 @@ private:
 	int length = 0;
 public:
 	int getLength(void) const;
-	void printAll(void) const;
-	void fillUp(void);
 	void sortArray(int flag);
+	void fillUp(void);
 	void getPrimenumber(void) const;
+	void printAll(void) const;
 };
 #endif
