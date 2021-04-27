@@ -8,6 +8,19 @@ using namespace std;
 int IntegerArray::getLength(void) const {
 	return length;
 }
+void IntegerArray::fillUp(void) {
+	srand(time(0));
+	for (int i = 0; i < N; i++) {
+		numbers[i] = rand() % 100;
+	}
+	length = N;
+}
+void IntegerArray::printAll(void) const {
+	for (int i = 0; i < length; i++) {
+		cout << setw(4) << numbers[i];
+	}
+	cout << endl;
+}
 void sortArray(int flag) {
 	int temp;
 	if (flag == 0) {
@@ -32,19 +45,15 @@ void sortArray(int flag) {
 		}
 	}
 }
-void IntegerArray::fillUp(void) {
-	srand(time(0));
-	for (int i = 0; i < N; i++) {
-		numbers[i] = rand() % 100;
-	}
-	length = N;
-}
 void getPrimenumber(void) const {
-
-}
-void IntegerArray::printAll(void) const {
 	for (int i = 0; i < length; i++) {
-		cout << setw(4) << numbers[i];
+		for (int j = 2; j < (i/j); j++) {
+			if ( i % j == 0 ) {
+				break;
+			}
+			if ( j > (i/j) ) {
+				cout << i << " ";
+			}
+		}
 	}
-	cout << endl;
 }
