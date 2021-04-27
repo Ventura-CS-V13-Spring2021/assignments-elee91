@@ -21,7 +21,7 @@ void IntegerArray::printAll(void) const {
 	}
 	cout << endl;
 }
-void sortArray(int flag) {
+void IntegerArray::sortArray(int flag) {
 	int temp;
 	if (flag == 0) {
 		for (int i = 0; i < length-1; i++) {
@@ -33,6 +33,7 @@ void sortArray(int flag) {
 				}
 			}
 		}
+	}
 	else {
 		for (int i = 0; i < length-1; i++) {
 			for (int j = 0; j < length-i-1; j++) {
@@ -45,14 +46,14 @@ void sortArray(int flag) {
 		}
 	}
 }
-void getPrimenumbers(void) const {
+void IntegerArray::getPrimenumbers(void) const {
 	int prime = 0;
 	for (int i = 0; i < length; i++) {
-		for (int j = 2; j < numbers[i]/j); j++) {
+		for (int j = 2; j < (i/j); j++) {
 			if ( numbers[i] % j == 0 ) {
 				break;
 			}
-			if ( j > (numbers[i]/j) ) {
+			if ( j > (i/j) ) {
 				prime++;
 			}
 		}
