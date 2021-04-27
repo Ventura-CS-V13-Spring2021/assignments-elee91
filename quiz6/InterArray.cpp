@@ -49,22 +49,23 @@ void IntegerArray::sortArray(int flag) {
 int IntegerArray::getPrimenumbers(void) const {
 	int count = 0;
 	bool isPrime = true;
+
 	for (int i = 0; i < length; i++) {
 		if (numbers[i] == 0 || numbers[i] == 1) {
-			isPrime = false;
+			continue;
 		} else if (numbers[i] == 2) {
-			isPrime = true;
+			count++;
 		} else {
 			for (int j = 2; j < (numbers[i]/j); j++) {
-				if ( numbers[i] % j == 0 ) {
-					isPrime = false;
+				if (numbers[i] % j == 0) {
+					isPrime = 0;
 					break;
 				}
-
+			}
+			if (isPrime == 1) {
+				count++;
 			}
 		}
-		if (isPrime == true)
-			count++;
 	}
 	return count;
 }
