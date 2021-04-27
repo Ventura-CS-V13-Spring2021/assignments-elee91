@@ -61,6 +61,8 @@ int IntegerArray::getPrimenumbers(void) const {
 					isPrime = 0;
 					break;
 				}
+				else 
+					isPrime = 1;
 			}
 			if (isPrime == 1) {
 				count++;
