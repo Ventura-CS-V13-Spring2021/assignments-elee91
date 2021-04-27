@@ -12,6 +12,6 @@ public:
 	void fillUp(void);
 	void printAll(void) const;
 	void sortArray(int flag);
-	void getPrimenumbers(void) const;
+	int getPrimenumbers(void) const;
 };
 #endif

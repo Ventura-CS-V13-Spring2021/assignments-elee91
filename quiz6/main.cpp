@@ -10,13 +10,13 @@ int main()
     N.printAll();
     cout << "Current length is " << N.getLength() << endl;
 
-    cout << "After sorting with ascending order : \n ";
+    cout << "After sorting with ascending order : \n";
     N.sortArray(0);
     N.printAll();
 
-    cout << "After sorting with descending order: \n ";
+    cout << "After sorting with descending order: \n";
     N.sortArray(1);
     N.printAll();
 	
-    cout << "The number of prime numbers " << N.getPrimenumbers() << endl;
+    cout << "The number of prime numbers : " << N.getPrimenumbers() << endl;
 }

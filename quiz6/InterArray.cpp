@@ -46,17 +46,16 @@ void IntegerArray::sortArray(int flag) {
 		}
 	}
 }
-void IntegerArray::getPrimenumbers(void) const {
+int IntegerArray::getPrimenumbers(void) const {
 	int prime = 0;
 	for (int i = 0; i < length; i++) {
-		for (int j = 2; j < (i/j); j++) {
+		for (int j = 2; j < 100; j++) {
 			if ( numbers[i] % j == 0 ) {
 				break;
 			}
-			if ( j > (i/j) ) {
+			else
 				prime++;
-			}
 		}
 	}
-	cout << prime;
+	return prime;
 }
