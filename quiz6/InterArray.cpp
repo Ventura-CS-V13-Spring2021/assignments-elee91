@@ -53,17 +53,18 @@ int IntegerArray::getPrimenumbers(void) const {
 		if (numbers[i] == 0 || numbers[i] == 1) {
 			isPrime = false;
 		} else if (numbers[i] == 2) {
-			count++;
+			isPrime = true;
 		} else {
-			for (int j = 2; j < (numbers[i]/2); j++) {
+			for (int j = 2; j < (numbers[i]/j); j++) {
 				if ( numbers[i] % j == 0 ) {
 					isPrime = false;
 					break;
 				}
-				else
-					count++;
+
 			}
 		}
+		if (isPrime == true)
+			count++;
 	}
 	return count;
 }
