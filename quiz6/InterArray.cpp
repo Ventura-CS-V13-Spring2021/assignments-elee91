@@ -56,7 +56,7 @@ int IntegerArray::getPrimenumbers(void) const {
 		} else if (numbers[i] == 2) {
 			count++;
 		} else {
-			for (int j = 2; j < (numbers[i]/j); j++) {
+			for (int j = 2; j < (numbers[i]/2); j++) {
 				if (numbers[i] % j == 0) {
 					isPrime = 0;
 					break;
