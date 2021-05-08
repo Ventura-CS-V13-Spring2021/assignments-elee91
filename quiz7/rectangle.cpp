@@ -26,8 +26,8 @@ double Rectangle::getArea()
 Coordinate Rectangle::getCenter()
 {
 	double centX, centY;
-	centX = lb.getX() + (rt.getX()-lb.getX()) / 2;
-	centY = lb.getY() + (rt.getY()-lb.getY()) / 2;
+	centX = lb.getX() + (rt.getX()-lb.getX()) / 2.0;
+	centY = lb.getY() + (rt.getY()-lb.getY()) / 2.0;
 	center.setXY(centX, centY);
 	return center;
 }
@@ -40,13 +40,16 @@ void Rectangle::setLBRT(Coordinate lbval, Coordinate rtval)
 }
 void Rectangle::printRectangle() const
 {
+	cout << " ---------------------- " << endl;
+	cout << "| Rectangle properties |" << endl;
+	cout << " ---------------------- " << endl;
 	cout << "Left-bottom coordinate: ";
 	lb.printXY();
 	cout << endl;
 	cout << "Right-top coordinate: ";
 	rt.printXY();
 	cout << endl;
-	cout << "Area: " << area << endl;
+	cout << "Area: " << area << " units" << endl;
 	cout << "Center: ";
 	center.printXY();
 	cout << endl;
