@@ -18,20 +18,34 @@ Coordinate Rectangle::getRT() const
 }
 double Rectangle::getArea()
 {
-	return (rt.getX() - lb.getX()) * (rt.getY() - lb.getY());
+	area = (rt.getX() - lb.getX()) * (rt.getY() - lb.getY());
+	return area;
 }
 Coordinate Rectangle::getCenter()
 {
 	double centX, centY;
 	centX = lb.getX() + (rt.getX()-lb.getX()) / 2;
 	centY = lb.getY() + (rt.getY()-lb.getY()) / 2;
-	Rectangle.setXY(centX, centY);
+	center = Rectangle.setXY(centX, centY);
+	return center;
 }
 void Rectangle::setLBRT(Coordinate lbval, Coordinate rtval)
 {
-	
+	lb = lbval;
+	rt = rtval;
 }
 void Rectangle::printRectangle() const
 {
-	
+	cout << "Left-bottom coordinate: ";
+	getLB();
+	cout << endl;
+	cout << "Right-top coordinate: ";
+	getRT();
+	cout << endl;
+	cout << "Area: ";
+	getArea();
+	cout << endl;
+	cout << "Center: ";
+	getCenter();
+	cout << endl;
 }
