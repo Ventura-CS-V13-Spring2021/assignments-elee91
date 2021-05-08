@@ -2,11 +2,13 @@
 #include <iostream>
 using namespace std;
 
-Rectangle::Rectangle() : lb(0.0, 0.0), rt(0.0, 0.0)
+Rectangle::Rectangle() : lb(0.0, 0.0), rt(0.0, 0.0), center(0.0, 0.0), area(0.0)
 {
 }
 Rectangle::Rectangle(Coordinate lbval, Coordinate rtval) : lb(lbval), rt(rtval)
 {
+	getArea();
+	getCenter();
 }
 Coordinate Rectangle::getLB() const
 {
@@ -26,13 +28,15 @@ Coordinate Rectangle::getCenter()
 	double centX, centY;
 	centX = lb.getX() + (rt.getX()-lb.getX()) / 2;
 	centY = lb.getY() + (rt.getY()-lb.getY()) / 2;
-	center = Rectangle.setXY(centX, centY);
+	center.setXY(centX, centY);
 	return center;
 }
 void Rectangle::setLBRT(Coordinate lbval, Coordinate rtval)
 {
 	lb = lbval;
 	rt = rtval;
+	getCenter();
+	getArea();
 }
 void Rectangle::printRectangle() const
 {
@@ -42,10 +46,8 @@ void Rectangle::printRectangle() const
 	cout << "Right-top coordinate: ";
 	getRT();
 	cout << endl;
-	cout << "Area: ";
-	getArea();
-	cout << endl;
+	cout << "Area: " << area << endl;
 	cout << "Center: ";
-	getCenter();
+	center.printXY();
 	cout << endl;
 }
