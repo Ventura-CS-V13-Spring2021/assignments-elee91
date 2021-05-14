@@ -9,7 +9,7 @@ int getNumDiv(int);
 int main() 
 {
 	const int N = 6;
-	int arr[N] = {1, 2, 4, 6, 10, 24};
+	int arr[N] = {11, 29, 43, 66, 99, 21};
 	int num, j;
 	int mostDiv = 0;
 
@@ -27,14 +27,14 @@ int main()
 	}
 	cout << " ]" << endl;
 	cout << arr[j];
-	cout << " has the most (" << num << ") divisible elements" << endl;
+	cout << " has the most (" << mostDiv << ") divisible elements" << endl;
 	return 0;
 }
 
 int getNumDiv(int n)
 {
 	int div = 0;
-	for (int i = 1; i < n; i++) {
+	for (int i = 1; i <= n; i++) {
 		if (n % i == 0) { div++; }
 	}
 	return div;
