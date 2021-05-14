@@ -6,7 +6,7 @@
 #include <iomanip>
 using namespace std;
 
-void sortAsc(int *, int);
+void sortDesc(int *, int);
 void printArray(int *, int);
 
 int main()
@@ -38,7 +38,7 @@ int main()
 		cout << setw(3) << right << arr[i] << setw(3) << left << " " << count << endl;
 	}
 }
-void sortAsc(int *arr, int n) {
+void sortDesc(int *arr, int n) {
 	int temp;
 	for (int i = 0; i < n-1; i++) {
         for (int j = 0; j < n-i-1; j++) {
