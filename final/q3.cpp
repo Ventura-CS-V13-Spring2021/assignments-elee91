@@ -5,13 +5,17 @@
 using namespace std;
 
 int main() {
-	Student s1, s2;
+	Student s1, s2, s3;
 	s1.inputInfo();
 	cout << "Student 1's info:" << endl;
 	s1.printInfo();
 
 	s2 = s1;
-	cout << "Student 2's info (copy):" << endl;
+	cout << "Student 2's info (assignment operator):" << endl;
+	s2.printInfo();
+
+	s3(&s1);
+	cout << "Student 3's info (assignment operator):" << endl;
 	s2.printInfo();
 
 	s1.resetClasses();

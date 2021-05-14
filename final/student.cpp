@@ -18,23 +18,20 @@ Student::Student(string n, int num)
 		cin >> classList[i];
 	}
 }
-Student::Student(Student &rhs)
+Student::Student(const Student &rhs)
 {
-	if (this != &rhs) {
-		delete [] classList;
-		classList = new string[rhs.numClasses];
-	}
 	name = rhs.name;
 	numClasses = rhs.numClasses;
+	classList = new string[numClasses];
 	for (int i = 0; i < numClasses; i++)
 		classList[i] = rhs.classList[i];
 }
-Student &Student::operator=(Student &rhs)
+Student &Student::operator=(const Student &rhs)
 {
-	if (this != &rhs) {
-		delete [] classList;
+	//if (this != &rhs) {
+	//	delete [] classList;
 		classList = new string[rhs.numClasses];
-	}
+	//}
 	name = rhs.name;
 	numClasses = rhs.numClasses;
 	for (int i = 0; i < numClasses; i++)
@@ -103,4 +100,6 @@ void Student::setClassList(string list[])
 Student::~Student() 
 {
 	delete [] classList;
+	numClasses = 0;
+	classList = NULL;
 }
