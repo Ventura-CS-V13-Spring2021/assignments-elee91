@@ -1,14 +1,16 @@
 #include "student.hpp"
 #include <iostream>
+#include <cstdlib>
 #include <string>
 using namespace std;
 
-Student::Student() : name("noname"), numClasses(0)
+Student::Student() : name(" "), numClasses(0), classList(NULL)
 {
 }
-Student::Student(string sname, int num, string list[]) : name(sname), numClasses(num) 
+Student::Student(string sname, int n, string list[]) : name(sname), numClasses(n) 
 {
-	for (int i = 0; i < num; i++)
+	classList = new string[n];
+	for (int i = 0; i < n; i++)
 		classList[i] = list[i];
 }
 Student &Student::operator=(Student &rhs)
@@ -23,9 +25,39 @@ Student &Student::operator=(Student &rhs)
 		classList[i] = rhs.classList[i];
 	return *this;
 }
-void Student::emptyClassList()
+void Student::resetClasses()
 {
-	
+	if (classList) {
+		delete [] classList;
+		classList = NULL;
+		numClasses = 0;
+	}
+}
+void Student::inputInfo()
+{
+	resetClasses();
+	cout << "Enter student name : ";
+	getline(cin, name);
+	cout << "Enter number of classes : ";
+	cin >> numClasses;
+	cin.ignore();
+	if (numClasses > 0) {
+		classList = new string[numClasses];
+	}
+	cout << "Enter name of class(es) " << endl;
+	for (int i = 0; i < numClasses; i++) {
+		cout << "(" << (i+1) << ") : ";
+		getline(cin, classList[i]);
+	}
+	cout << endl;
+}
+void Student::printInfo()
+{
+	cout << "Name of Student: " << name << endl
+		 << "Number of Courses: " << numClasses << endl;
+	for (int i = 0; i < numClasses; i++)
+		cout << "\t" << classList[i] << endl;
+	cout << endl;
 }
 string Student::getName() const
 {
@@ -52,13 +84,7 @@ void Student::setClassList(string list[])
 	for (int i = 0; i < numClasses; i++)
 		classList[i] = list[i];
 }
-void Student::printStudent() const
+Student::~Student() 
 {
-	cout << "Student: " << name << endl;
-	cout << "Courses: " << endl;
-	for (int i = 0; i < numClasses; i++)
-		cout << "\t" << classList[i] << endl;
-}
-Student::~Student() {
 	delete [] classList;
 }

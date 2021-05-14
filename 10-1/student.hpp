@@ -11,16 +11,17 @@ private:
 	string *classList;
 public:
 	Student();
-	Student(string sname, int num, string list[]);
-	Student &operator=(Student &rhs);
-	void emptyClassList();
+	Student(string sname, int n, string list[]);
+	Student &operator=(Student &rhs); // Assignment operator
+	void resetClasses(); // Reset class list
+	void inputInfo();
+	void printInfo();
 	string getName() const;
 	int getNumClasses() const;
 	string getClassList() const;
 	void setName(string sname);
 	void setNumClasses(int num);
 	void setClassList(string list[]);
-	void printStudent() const;
 	~Student();
 };
 #endif
