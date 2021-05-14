@@ -17,7 +17,9 @@ int main()
 	for (int i = 0; i < arrSize; i++) {
 		cout << " " << arr[i];
 		num = getNumDiv(arr[i]);
-		if (i == 0) { mostDiv = num; } // intializes first array element as greatest
+		if (i == 0) { 
+			mostDiv = num; 
+		} // intializes first array element as greatest
 		else {
 			if ( num > mostDiv ) { // replaces previous max element
 				mostDiv = num;

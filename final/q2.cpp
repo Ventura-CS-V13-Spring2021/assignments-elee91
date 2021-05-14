@@ -5,22 +5,35 @@
 #include <iomanip>
 using namespace std;
 
-void sortAsc(int, int);
+void sortAsc(int *, int);
 
 int main()
 {
 	int arr[] = {-12, 3, -12, 4, 1, 1, -12, 1, -1, 1, 2, 3, 4, 2, 3, -12};
 	int arrSize = sizeof(arr)/sizeof(arr[0]);
-	int p = 0, q = 0;
-	int newArr[p][q];
 	int count;
 
-	sortAsc(arr, arrSize);
-	cout << arr;
+	cout << "For the array values " << endl;
+	sortAsc(arr, arrSize); // sorts array from -inf to +inf
+	
+	cout << "the output should be" << endl;
+	cout << setw(5) << right << "N" << setw(5) << left << "Count" << endl;
 	for (int i = 0; i < arrSize; i++) {
-		for (int j = 1; j < arrSize; j++) {
-
+		count = 0;
+		if (arr[i] == arr[i+1]) {
+			for (int j = i+1; j < arrSize; j++) {
+				if (arr[i] == arr[j]) {
+					count++;
+				}
+				else if (arr[i] != arr[j]) {
+					break;
+				}
+			}
+			cout << setw(5) << right << arr[i] << setw(5) << left << count << endl;
 		}
+		else if (arr[i] == arr)
+			continue;
+		
 	}
 }
 void sortAsc(int *arr, int n) {
