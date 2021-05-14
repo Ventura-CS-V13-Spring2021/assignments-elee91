@@ -11,7 +11,7 @@ private:
 	string *classList;
 public:
 	Student();
-	Student(string sname, int n, string list[]);
+	Student(string sname, int n);
 	Student &operator=(Student &rhs); // Assignment operator
 	void resetClasses(); // Reset class list
 	void inputInfo();

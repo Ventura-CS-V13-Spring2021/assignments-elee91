@@ -7,11 +7,16 @@ using namespace std;
 Student::Student() : name(" "), numClasses(0), classList(NULL)
 {
 }
-Student::Student(string sname, int n, string list[]) : name(sname), numClasses(n) 
+Student::Student(string n, int num)
 {
-	classList = new string[n];
-	for (int i = 0; i < n; i++)
-		classList[i] = list[i];
+	name = n;
+	numClasses = num; 
+	classList = new string[num];
+	for (int i = 0; i < numClasses; i++)
+	{
+		cout << "Enter the course name : ";
+		cin >> classList[i];
+	}
 }
 Student &Student::operator=(Student &rhs)
 {
