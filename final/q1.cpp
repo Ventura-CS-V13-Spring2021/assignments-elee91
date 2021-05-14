@@ -8,13 +8,13 @@ int getNumDiv(int);
 
 int main() 
 {
-	const int N = 6;
-	int arr[N] = {14, 18, 19, 48, 6, 25};
+	int arr[] = {14, 18, 19, 48, 6, 25};
+	int arrSize = sizeof(arr)/sizeof(arr[0]);
 	int num, j;
 	int mostDiv = 0;
 
 	cout << "In the array [";
-	for (int i = 0; i < N; i++) {
+	for (int i = 0; i < arrSize; i++) {
 		cout << " " << arr[i];
 		num = getNumDiv(arr[i]);
 		if (i == 0) { mostDiv = num; } // intializes first array element as greatest
