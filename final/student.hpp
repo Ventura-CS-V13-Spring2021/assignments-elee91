@@ -12,6 +12,7 @@ private:
 public:
 	Student();
 	Student(string sname, int n);
+	Student(Student &rhs)
 	Student &operator=(Student &rhs); // Assignment operator
 	void resetClasses(); // Reset class list
 	void inputInfo();

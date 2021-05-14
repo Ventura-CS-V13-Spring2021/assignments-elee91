@@ -18,6 +18,17 @@ Student::Student(string n, int num)
 		cin >> classList[i];
 	}
 }
+Student::Student(Student &rhs)
+{
+	if (this != &rhs) {
+		delete [] classList;
+		classList = new string[rhs.numClasses];
+	}
+	name = rhs.name;
+	numClasses = rhs.numClasses;
+	for (int i = 0; i < numClasses; i++)
+		classList[i] = rhs.classList[i];
+}
 Student &Student::operator=(Student &rhs)
 {
 	if (this != &rhs) {
