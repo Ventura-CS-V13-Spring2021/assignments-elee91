@@ -9,7 +9,7 @@ int getNumDiv(int);
 int main() 
 {
 	const int N = 6;
-	int arr[N] = {11, 29, 43, 66, 99, 21};
+	int arr[N] = {14, 18, 19, 48, 6, 25};
 	int num, j;
 	int mostDiv = 0;
 
