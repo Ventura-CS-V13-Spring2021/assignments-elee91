@@ -17,7 +17,7 @@ int main()
 
 	cout << "For the array values " << endl;
 	printArray(arr, arrSize);
-	sortAsc(arr, arrSize); // sort array function from +inf to -inf
+	sortDesc(arr, arrSize); // sort array function from +inf to -inf
 	
 	cout << "the output should be" << endl;
 	cout << setw(3) << right << "N" << setw(3) << left << " Count" << endl;
