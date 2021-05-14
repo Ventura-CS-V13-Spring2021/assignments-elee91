@@ -6,6 +6,7 @@
 using namespace std;
 
 void sortAsc(int *, int);
+void printArray(int *, int);
 
 int main()
 {
@@ -14,11 +15,8 @@ int main()
 	int count;
 
 	cout << "For the array values " << endl;
-	for (int i = 0; i < arrSize; i++) // print array
-		cout << arr[i] << " ";
-	cout << endl;
-
-	sortAsc(arr, arrSize); // sorts array from +inf to -inf
+	printArray(arr, arrSize);
+	sortAsc(arr, arrSize); // sort array function from +inf to -inf
 	
 	cout << "the output should be" << endl;
 	cout << setw(3) << right << "N" << setw(3) << left << " Count" << endl;
@@ -43,11 +41,16 @@ void sortAsc(int *arr, int n) {
 	int temp;
 	for (int i = 0; i < n-1; i++) {
         for (int j = 0; j < n-i-1; j++) {
-            if ( arr[j] > arr[j+1]) {
+            if ( arr[j] < arr[j+1]) {
                 temp = arr[j];
    				arr[j] = arr[j+1];
     			arr[j+1] = temp;
 			}
 		}
     }
+}
+void printArray(int *arr, int n) {
+	for (int i = 0; i < n; i++) // print array
+		cout << arr[i] << " ";
+	cout << endl;
 }
