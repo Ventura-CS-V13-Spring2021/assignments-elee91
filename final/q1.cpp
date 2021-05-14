@@ -10,22 +10,32 @@ int main()
 {
 	const int N = 6;
 	int arr[N] = {1, 2, 4, 6, 10, 24};
-	int num;
+	int num, j;
 	int mostDiv = 0;
 
+	cout << "In the array [";
 	for (int i = 0; i < N; i++) {
-		
+		cout << " " << arr[i];
 		num = getNumDiv(arr[i]);
+		if (i == 0) { mostDiv = num; } // intializes first array element as greatest
+		else {
+			if ( num > mostDiv ) { // replaces previous max element
+				mostDiv = num;
+				j = i; // placeholder for array
+			}
+		}
 	}
+	cout << " ]" << endl;
+	cout << arr[j];
+	cout << " has the most (" << num << ") divisible elements" << endl;
+	return 0;
 }
 
 int getNumDiv(int n)
 {
 	int div = 0;
 	for (int i = 1; i < n; i++) {
-		if (n % i == 0) {
-			div++;
-		}
+		if (n % i == 0) { div++; }
 	}
 	return div;
 }
