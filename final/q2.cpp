@@ -14,26 +14,29 @@ int main()
 	int count;
 
 	cout << "For the array values " << endl;
-	sortAsc(arr, arrSize); // sorts array from -inf to +inf
+	for (int i = 0; i < arrSize; i++) // print array
+		cout << arr[i] << " ";
+	cout << endl;
+
+	sortAsc(arr, arrSize); // sorts array from +inf to -inf
 	
 	cout << "the output should be" << endl;
-	cout << setw(5) << right << "N" << setw(5) << left << "Count" << endl;
+	cout << setw(3) << right << "N" << setw(3) << left << " Count" << endl;
 	for (int i = 0; i < arrSize; i++) {
-		count = 0;
-		if (arr[i] == arr[i+1]) {
-			for (int j = i+1; j < arrSize; j++) {
-				if (arr[i] == arr[j]) {
-					count++;
-				}
-				else if (arr[i] != arr[j]) {
-					break;
-				}
-			}
-			cout << setw(5) << right << arr[i] << setw(5) << left << count << endl;
-		}
-		else if (arr[i] == arr)
+		count = 1;
+		if (arr[i] == arr[i-1] && i > 0) {
 			continue;
-		
+		}
+		for (int j = i+1; j < arrSize; j++) {
+			if (arr[i] == arr[j]) {
+				count++;
+			} // if index is same as next element, count++
+			else if (arr[i] != arr[j]) {
+				break;
+				i = j;
+			} // if next element is different, break count loop
+		}
+		cout << setw(3) << right << arr[i] << setw(3) << left << " " << count << endl;
 	}
 }
 void sortAsc(int *arr, int n) {
