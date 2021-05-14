@@ -4,20 +4,28 @@
 #include <iostream>
 using namespace std;
 
-int getNumDiv(int, int)
+int getNumDiv(int);
 
 int main() 
 {
 	const int N = 6;
 	int arr[N] = {1, 2, 4, 6, 10, 24};
+	int num;
+	int mostDiv = 0;
 
-	getNumDiv(arr, N);
+	for (int i = 0; i < N; i++) {
+		
+		num = getNumDiv(arr[i]);
+	}
 }
 
-int getNumDiv(int arr, int n)
+int getNumDiv(int n)
 {
-	for (int i = 0; i < n; i++)
-	{
-
+	int div = 0;
+	for (int i = 1; i < n; i++) {
+		if (n % i == 0) {
+			div++;
+		}
 	}
+	return div;
 }
